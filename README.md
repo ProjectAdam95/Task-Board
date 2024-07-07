@@ -1,6 +1,7 @@
 # Task-Board
 
 # Introduction
+ 
  Task-Board by Adam Todorovic
 
 
@@ -18,6 +19,7 @@
 - [License](#lock-license)
 
 ##  :beginner: About
+
 This is a task board application where the user is able to manage project tasks. 
 The user is prompted to fill out a form when "Add Task" is clicked with Title, Description and Due Date. 
 This will allow the user to view their projects on the board which are in progress, overdue or due in the future.
@@ -30,7 +32,7 @@ Features include:
 - The user can enter the Title, Description and due date in a form when "Add Task" is clicked on the front page.
 - When the user clicks "Save Task" again when the form is completed the form displays on athe page and is saved to local storage.
 - When the page is refreshed the projects remain in the original column
-- Delete button removes the project from the column
+- Delete button removes the project from the respective column.
 
 ###  :file_folder: File Structure
 Below is a view of the file structure deployed to GitHub.
@@ -83,7 +85,7 @@ Software used
 ##  :camera: Gallery
 Below is a preview photo of the website.
 
-PREVIEW PHOTOS HERE
+Click here to view preview photos: https://imgur.com/a/gRco5Hv
 
 
 
