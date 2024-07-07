@@ -1,6 +1,6 @@
 // Retrieve tasks and nextId from localStorage
 // 1. Initializes the taskList with tasks from localStorage (or an empty array if none exist)
-// 2. sets nextId to the next available task ID from localStorage (or 1 if none exist).
+// 2. Sets nextId to the next available task ID from localStorage (or 1 if none exist).
 let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
 let nextId = JSON.parse(localStorage.getItem("nextId")) || 1;
 
@@ -39,8 +39,8 @@ function createTaskCard(task) {
 }
 
 // Render the task list
-// 1. Removes existing cards. Deletes all task cards currently displayed in the lanes.
-// 2. Append New Card. Adds the task cards from the taskList array to their respective lanes based on the task status.
+// 1. Removes existing cards. Deletes all task cards currently displayed in the lanes
+// 2. Append New Card. Adds the task cards from the taskList array to their respective lanes based on the task status
 // 3.  Make cards draggable.  Makes each task card draggable, ensuring they come to the front when dragged and 
 //    return to their original position if not dropped in a valid area.
 function renderTaskList() {
@@ -60,10 +60,10 @@ function renderTaskList() {
 }
 
 // Handle adding a new task
-// 1. The handleAddTask function prevents the default form submission, 
-// 2. Collects task details from the form,
-// 3. Creates a new task, adds it to the task list, updates localStorage, 
-// 4. Re-renders the task list, and hides the modal form.
+// 1. The handleAddTask function prevents the default form submission
+// 2. Collects task details from the form
+// 3. Creates a new task, adds it to the task list, updates localStorage
+// 4. Re-renders the task list, and hides the modal form
 function handleAddTask(event) {
   event.preventDefault();
   const title = $("#taskTitle").val();
@@ -84,8 +84,8 @@ function handleAddTask(event) {
 }
 
 // Handle deleting a task
-// 1. The handleDeleteTask function removes a task from the task list based on its ID, 
-// 2. Updates the task list in localStorage, and re-renders the task list.
+// 1. The handleDeleteTask function removes a task from the task list based on its ID
+// 2. Updates the task list in localStorage, and re-renders the task list
 function handleDeleteTask(event) {
   const taskId = $(event.target).closest(".card").data("id");
   taskList = taskList.filter(task => task.id !== taskId);
@@ -94,8 +94,8 @@ function handleDeleteTask(event) {
 }
 
 // Handle dropping a task into a new status lane
-// 1. The handleDrop function updates the status of a dropped task by changing its status based on the new lane it was dropped into, 
-// 2. Saves the updated task list to localStorage, and re-renders the task list.
+// 1. The handleDrop function updates the status of a dropped task by changing its status based on the new lane it was dropped into 
+// 2. Saves the updated task list to localStorage, and re-renders the task list
 function handleDrop(event, ui) {
   const taskId = ui.draggable.data("id");
   const newStatus = $(this).attr("id");
@@ -105,10 +105,10 @@ function handleDrop(event, ui) {
   renderTaskList();
 }
 
-// Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
-// 1. Initializes the task list, 
-// 2. Makes lanes droppable, 
-// 3. Sets up the date picker,
+// When the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker.
+// 1. Initializes the task list 
+// 2. Makes lanes droppable 
+// 3. Sets up the date picker
 // 4. Attaches event handlers for adding and deleting tasks when the document is fully loaded.
 $(document).ready(function () {
   renderTaskList();

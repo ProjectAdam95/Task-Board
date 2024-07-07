@@ -1,16 +1,20 @@
+/* Set the default font family and size for the body */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 
+/* Ensure swim lanes have a minimum height for layout stability */
 .swim-lanes {
   min-height: 60vh;
 }
 
+/* Center task cards */
 .task-card {
   margin: 0 auto;
 }
 
+/* Change the cursor to a grab icon when hovering over a task card */
 .task-card:hover {
   cursor: grab;
 }
